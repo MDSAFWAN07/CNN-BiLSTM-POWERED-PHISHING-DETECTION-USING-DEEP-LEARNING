@@ -1,0 +1,34 @@
+
+================================================================================
+                        MODEL TRAINING SUMMARY
+================================================================================
+
+✓ TRAINING COMPLETED SUCCESSFULLY!
+
+Dataset Statistics:
+  • Total Samples:      11,430
+  • Training Samples:   9,144
+  • Test Samples:       2,286
+  • Features:           28
+
+Model Performance (Test Set):
+┌─────────────────────────┬──────────┬───────────┬─────────┬──────────┬─────────┐
+│ Model                   │ Accuracy │ Precision │ Recall  │ F1-Score │ ROC-AUC │
+├─────────────────────────┼──────────┼───────────┼─────────┼──────────┼─────────┤
+│ Neural Network          │ 0.8731   │ 0.8764     │ 0.8688  │ 0.8726    │ 0.9462  │
+│ Gradient Boosting       │ 0.9199   │ 0.9103     │ 0.9318  │ 0.9209    │ 0.9771  │
+│ Random Forest           │ 0.9147   │ 0.9044     │ 0.9274  │ 0.9158    │ 0.9734  │
+│ 🏆 ENSEMBLE (Best)      │ 0.9204   │ 0.9103     │ 0.9326  │ 0.9213    │ 0.9748  │
+└─────────────────────────┴──────────┴───────────┴─────────┴──────────┴─────────┘
+
+Files Generated:
+  ✓ bilstm_model.pkl          - Neural Network model
+  ✓ xgboost_model.pkl         - Gradient Boosting model
+  ✓ rf_model.pkl              - Random Forest model
+  ✓ ensemble_config.json      - Ensemble configuration
+  ✓ model_metadata.json       - Complete model metadata
+  ✓ scaler.pkl                - Feature scaler
+  ✓ feature_names.pkl         - Feature names
+
+Ready for Deployment! 🚀
+================================================================================

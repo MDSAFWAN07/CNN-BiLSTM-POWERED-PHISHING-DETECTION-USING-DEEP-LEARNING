@@ -1,0 +1,40 @@
+{
+    "total_samples": 11430,
+    "training_samples": 9144,
+    "test_samples": 2286,
+    "num_features": 28,
+    "feature_names": [
+        "length_url",
+        "length_hostname",
+        "ip",
+        "nb_dots",
+        "nb_hyphens",
+        "nb_at",
+        "nb_and",
+        "nb_or",
+        "nb_underscore",
+        "nb_slash",
+        "nb_colon",
+        "nb_comma",
+        "nb_semicolumn",
+        "nb_dollar",
+        "nb_space",
+        "nb_www",
+        "nb_com",
+        "web_traffic",
+        "has_https",
+        "domain_length",
+        "path_length",
+        "has_ip",
+        "has_at",
+        "has_double_slash",
+        "has_dash",
+        "url_entropy",
+        "digit_ratio",
+        "special_char_ratio"
+    ],
+    "class_distribution": {
+        "legitimate": 5715,
+        "phishing": 5715
+    }
+}

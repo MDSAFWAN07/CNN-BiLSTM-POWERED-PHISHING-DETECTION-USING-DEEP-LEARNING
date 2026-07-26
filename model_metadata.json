@@ -1,0 +1,84 @@
+{
+    "model_info": {
+        "type": "Hybrid Ensemble (Neural Network + Gradient Boosting + Random Forest)",
+        "version": "1.0",
+        "framework": "scikit-learn",
+        "purpose": "Phishing URL Detection"
+    },
+    "architecture": {
+        "neural_network": {
+            "type": "MLPClassifier",
+            "layers": [
+                128,
+                64,
+                32
+            ],
+            "activation": "relu",
+            "optimizer": "adam"
+        },
+        "gradient_boosting": {
+            "type": "GradientBoostingClassifier",
+            "n_estimators": 200,
+            "max_depth": 7,
+            "learning_rate": 0.1
+        },
+        "random_forest": {
+            "type": "RandomForestClassifier",
+            "n_estimators": 150,
+            "max_depth": 15
+        }
+    },
+    "ensemble": {
+        "method": "weighted_voting",
+        "weights": {
+            "nn": 0.4,
+            "gb": 0.35,
+            "rf": 0.25
+        }
+    },
+    "data_info": {
+        "input_features": 28,
+        "training_samples": 9144,
+        "validation_samples": 1372,
+        "test_samples": 2286
+    },
+    "performance": {
+        "neural_network": {
+            "accuracy": 0.8731408573928259,
+            "precision": 0.8764342453662842,
+            "recall": 0.868766404199475,
+            "f1_score": 0.8725834797891037,
+            "roc_auc": 0.9462275220846739
+        },
+        "gradient_boosting": {
+            "accuracy": 0.9199475065616798,
+            "precision": 0.9102564102564102,
+            "recall": 0.931758530183727,
+            "f1_score": 0.920881971465629,
+            "roc_auc": 0.9771445345359827
+        },
+        "random_forest": {
+            "accuracy": 0.9146981627296588,
+            "precision": 0.9044368600682594,
+            "recall": 0.9273840769903762,
+            "f1_score": 0.9157667386609071,
+            "roc_auc": 0.9733625269719673
+        },
+        "ensemble": {
+            "accuracy": 0.9203849518810149,
+            "precision": 0.910333048676345,
+            "recall": 0.9326334208223972,
+            "f1_score": 0.9213483146067416,
+            "roc_auc": 0.9748011594788621
+        }
+    },
+    "deployment": {
+        "input_format": "numpy array of shape (n_samples, 28)",
+        "output_format": "probability scores (0-1)",
+        "threshold": 0.5,
+        "classes": [
+            "legitimate",
+            "phishing"
+        ]
+    }
+}
